@@ -5,4 +5,4 @@ function addStudent(student) {
 }
 /* è possibile aggiungere un elemento al array anche se dichiarato con const perche sono objects  */
 addStudent('Marco');
-console.log(students);
+console.log(students); 

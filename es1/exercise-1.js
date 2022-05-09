@@ -6,4 +6,4 @@ function canPlay() {
   }
 }
 
-canPlay();
+canPlay(); 

@@ -10,4 +10,4 @@ function canPlay() {
   console.log(personName);
 }
 
-canPlay();
+canPlay(); 
