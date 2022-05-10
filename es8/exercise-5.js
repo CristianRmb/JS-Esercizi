@@ -1,5 +1,9 @@
 function calculateAverageAge(persons) {
-  // ...
+  let etaMedia = 0;
+  for (let i = 0; i < persons.length; i++) {
+    etaMedia = (etaMedia + persons[i].age);
+  }
+  return etaMedia / persons.length;
 }
 
 const persons = [
@@ -12,7 +16,7 @@ const persons = [
   { name: 'Simon', age: 24 },
   { name: 'Mark', age: 15 },
   { name: 'Sandra', age: 34 },
-  { name: 'Alice', age: 28 }
+  { name: 'Alice', age: 28 },
 ];
 
 const averageAge = calculateAverageAge(persons);
