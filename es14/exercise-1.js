@@ -1,5 +1,7 @@
 function greet(greeting) {
-  // ...
+  return function innerFunction(name){
+    return `${greeting}, ${name}`;
+  }
 }
 
 const greetWithHello = greet('Hello');

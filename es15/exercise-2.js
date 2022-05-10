@@ -1,5 +1,7 @@
 function pow(base) {
-  // ...
+  return function exp(n){
+    return base ** n;/* su puo fare con un ciclo ma esiste l'operatore */
+  }
 }
 
 const pow2 = pow(2);
