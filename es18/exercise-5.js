@@ -1,6 +1,13 @@
 function memoize(fn) {
   let cache = {};
-  // ...
+  return function (arg) {
+    if (arg in cache) {
+      return `in cache : ${cache[arg]}`;
+    } else {
+      cache[arg] = fn(arg);
+      return cache[arg];
+    }
+  };
 }
 
 function factorial(x) {

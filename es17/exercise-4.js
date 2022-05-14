@@ -1,5 +1,26 @@
 function calculate() {
-  // ...
+  let risultato = 0;
+  return {
+    add: function (x){
+      risultato += x;
+      return this; 
+    },
+    multiply: function (x){
+      risultato *= x;
+      return this;
+    },
+    sub: function (x) {
+      risultato -= x;
+      return this;
+    }, 
+    divide: function(x) {
+      risultato /= x;
+      return this;
+    },
+    printResult: function() {
+      console.log(risultato);
+    }
+  }
 }
 
 const calculator = calculate();
