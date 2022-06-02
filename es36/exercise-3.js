@@ -7,10 +7,10 @@ class Person {
     this.firstName = firstName;
     this.lastName = lastName;
   }
-  /* non capico la consegna, devo fare un oggetto `person` a partire dal oggetto `obj`? 
-  come ho fatto funziona ma non è altro che una copia di obj*/
+
+  
   static fromObject(obj) {
-    return Object.assign(obj)
+    return new Person(obj.firstName, obj.lastName);
   }
 }
 
