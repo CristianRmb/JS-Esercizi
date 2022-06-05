@@ -14,7 +14,8 @@ class Person {
   }
 
   static fromJson(jsonObj) {
-    return JSON.parse(jsonObj);
+    const {id, firstName, lastName, age} = JSON.parse(jsonObj)
+    return new Person(id, firstName, lastName, age);
   }
 }
 
