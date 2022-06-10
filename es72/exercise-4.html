@@ -1,0 +1,44 @@
+<html>
+
+<body>
+  <div id="container">
+    <form>
+      <div>
+        <label>First Name:</label>
+        <input type="text" class="form-input" id="firstName" value="Mario" />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" class="form-input" id="lastName" value="Rossi" />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="number" class="form-input" id="age" value="25" />
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<!-- # Dom Tree - Exercise 4
+Implementare il codice necessario per recuperare il valore di ciascun campo di 
+input e creare un oggetto `person` contenente le proprietà: `firstName`, `lastName` 
+e `age`. Infine recuperare l'elemento `form` e aggiungere l'attributo `data-person` 
+contenente l'oggetto `person` in formato json. -->
+
+<script>
+  // code here
+  let fName = document.getElementById('firstName').getAttribute('value')
+  let lName = document.getElementById('lastName').getAttribute('value')
+  let Age = document.getElementById('age').getAttribute('value')
+  let person = {
+    firstName: fName,
+    lastName: lName,
+    age: Age
+  };
+  let personInJson= JSON.stringify(person) 
+  let elementForm = document.getElementById("container").childNodes[1];
+  elementForm.setAttribute("data-person", personInJson)
+  console.log(elementForm);
+</script>

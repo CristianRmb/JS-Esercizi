@@ -1,0 +1,34 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Person's List</h2>
+    <button id="add-row">Add row</button>
+    <table id="person-table">
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+
+<!-- 
+# Dom Tree - Exercise 5
+Implementare il codice necessario per creare una tabella le cui righe sono generate dinamicamente.
+Al click del pulsante "Add Row" occorre richiamare la funzione `addRow`, la quale si occupa di creare
+dinamicamente un elemento `<tr>` contenente un campo di testo per ciascuna colonna: `firstName`, `lastName` e `age`. 
+Appendere la riga generata al `<tbody>` della tabella. -->
+
+<script>
+  // code here
+  document.getElementById('add-row').addEventListener('click', addRow)
+  function addRow() {
+    let tableBody = document.getElementById('person-table').childNodes[1];
+    tableBody.innerHTML += `
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th>
+    </tr>`
+  }
+</script>

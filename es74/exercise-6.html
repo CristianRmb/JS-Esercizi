@@ -1,0 +1,51 @@
+<html>
+<body>
+  <div id="container">
+    <h2>Person's Form</h2>
+    <form id="person-form">
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+
+<!-- # Dom Tree - Exercise 6
+Implementare il codice necessario per generare dinamicamente il form `person-form`.
+Al caricamento della pagina occorre creare ed eseguire la funzione `initForm` che si occuperà di generare dinamicamente e aggiungere al
+form i campi: `firstName`, `lastName` e `age`.
+Al click del pulsante "Submit" del form richiamare il metodo `submitPersonForm`, il quale si dovrà occupare di:
+* Prevenire l'evento di default che avviene al submit del form
+* Creare un oggetto `person` contenente i valori del form popolato dall'utente
+* Eseguire il `console.log` dell'oggetto `person` creato -->
+
+<script>
+  // Code here
+  function initForm() {
+    document.getElementById('person-form').innerHTML += `
+      <div>
+        <label>First Name:</label>
+        <input type="text" id="firstName" />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" id="lastName" />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="number" id="age" />
+      </div>
+    `
+  }
+  initForm();
+
+  function submitPersonForm(event) {
+    event.preventDefault();
+    const form = document.getElementById('person-form');
+    let person = {};
+    person.firstName = document.getElementById("firstName").value;
+    person.lastName = document.getElementById("lastName").value;
+    person.age = document.getElementById("age").value;
+    console.log(person);
+  }
+  document.getElementById("person-form").addEventListener("submit", submitPersonForm);
+</script>

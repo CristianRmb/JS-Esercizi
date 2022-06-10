@@ -1,0 +1,32 @@
+<html>
+
+<body>
+  <div id="container">
+    <form>
+      <div>
+        <label>First Name:</label>
+        <input type="text" class="form-input" id="firstName" value="Mario" />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" class="form-input" id="lastName" value="Rossi" />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="number" class="form-input" id="age" value="25" />
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<!-- # Dom Tree - Exercise 1
+Implementare il codice necessario per recuperare il contenuto del campo di testo `firstName` e stamparlo in console.
+N.B: utilizzare l'id come selettore -->
+
+<script>
+  // code here
+  let firstName = document.getElementById('firstName').getAttribute('value')
+  console.log(firstName);
+</script>

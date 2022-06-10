@@ -1,0 +1,46 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Hero's List</h2>
+    <ul class="hero-list">
+      <li class="hero-list-item">Batman</li>
+      <li class="hero-list-item">Superman</li>
+      <li class="hero-list-item">Spiderman</li>
+      <li class="hero-list-item">Hulk</li>
+      <li class="hero-list-item">Wolverine</li>
+    </ul>
+  </div>
+</body>
+
+</html>
+
+<!-- # Dom Tree - Exercise 8
+Implementare il codice necessario per farsì che al passaggio del mouse sopra un elemento `.hero-list-item`, 
+quest'ultimo venga evidenziato di rosso. Quando poi il mouse si sposta fuori dall'area dell'elemento, 
+quest'ultimo deve ritornare ad avere il colore orginario (`transparent`) -->
+
+<script>
+  // // code here
+  /* Questa è la prima soluzione a cui ho pensato e visto che la consegna non specifica di farlo in altro modo 
+  credo sia giusto anche cosi */
+  // document.querySelector("html").innerHTML += `
+  // <head>
+  //   <style>
+  //     .hero-list-item:hover{
+  //       width: max-content;
+  //       background-color: red;
+  //     }
+  //   </style>
+  // </head>
+  // `
+
+  /* in alternativa: */
+  const listElementHover = document.querySelectorAll(".hero-list-item")
+  console.log(listElementHover); //mi ritorna una array di elementi quindi devo fare un ciclo, stessa cosa per getByElements.....
+  //solo con id si può fare senza ciclo 
+  listElementHover.forEach(item => {
+    item.addEventListener('mouseenter', () => { item.style.backgroundColor = "red"; item.style.width = "max-content"; })
+    item.addEventListener('mouseleave', () => { item.style.backgroundColor = "transparent" })
+  })
+</script>
