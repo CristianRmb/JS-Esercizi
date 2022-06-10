@@ -1,0 +1,26 @@
+<html>
+<body>
+  <div id="container">
+    <button type="button" id="fetch-post">
+      Fetch Post from LocalStorage
+    </button>
+    <h2>Post: <span id="post-title"></span></h2>
+  </div>
+</body>
+</html>
+
+<!-- 
+# Browser Storing Data - Exercise 2
+Implementare il codice necessario per:
+* Recuperare il post presente all'interno del LocalStorage (salvato tramite l'esercizio precedente)
+* Visualizzare all'interno dell'elemento `#post-title` il titolo del post recuperato dal LocalStorage -->
+
+<script>
+  // code here
+  const clickButton = document.getElementById("fetch-post")
+  clickButton.addEventListener("click", () => {
+    let objJson = localStorage.getItem("Post")
+    let objPost = JSON.parse(objJson)
+    document.getElementById("post-title").innerHTML = objPost.title;
+  })
+</script>

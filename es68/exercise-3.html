@@ -1,0 +1,56 @@
+<html>
+
+<body>
+  <div id="container">
+    <form>
+      <div>
+        <label>Title</label>
+        <input type="text" id="todo-title" />
+      </div>
+      <div>
+        <label>Completed</label>
+        <input type="checkbox" id="todo-completed" />
+      </div>
+
+      <button type="submit" id="submit-todo"></button>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<!-- # Network Requests - Exercise 3
+Implementare il codice necessario per eseguire una richiesta HTTP che si occupa di creare un nuovo post. 
+Per creare un nuovo post utilizzare il seguente url: https://jsonplaceholder.typicode.com/posts (metodo: POST). 
+Il corpo della richiesta deve contenere un oggetto post con le seguenti informazioni: `title` e flag `completed`. 
+I dati del post dovranno essere trasmessi in seguito alla compilazione di un form. -->
+
+<script>
+  // code here
+
+  const form = document.querySelector("form");
+  form.addEventListener("submit", inviaPost)
+
+  async function inviaPost(event) {
+    event.preventDefault(); // senza questo non riesco a vedere nulla in log, non capisco perche 
+
+    let title = document.getElementById("todo-title")
+    let checkbox = document.getElementById("todo-completed")
+    //creo il post da inviare
+    let post = {
+      title: title.value,
+      flag: checkbox.value
+    }
+
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify(post)
+    })
+    
+    console.log(response);
+    let result = await response.json()
+    console.log(result);
+  }
+
+</script>
